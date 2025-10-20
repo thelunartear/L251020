@@ -3,8 +3,9 @@ class UWorld;
 
 class FEngine
 {
-public:
+protected:
 	FEngine();
+public:
 	virtual ~FEngine();
 
 	virtual void Init();
@@ -31,5 +32,18 @@ protected:
 	bool bIsRunning = true;
 
 	int KeyCode = 0;
+
+public:
+	static FEngine* GetInstance()
+	{
+		if (Instance == nullptr)
+		{
+			Instance = new FEngine();
+		}
+		return Instance;
+	}
+protected:
+	static FEngine* Instance;
 };
 
+#define GEngine		FEngine::GetInstance()

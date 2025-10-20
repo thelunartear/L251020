@@ -9,7 +9,7 @@ public:
 	UWorld();
 	virtual ~UWorld();
 
-	std::vector<AActor*> GetAllActors() const; 
+	std::vector<AActor*>& GetAllActors(); 
 	AActor* SpawnActor(AActor* NewActor);
 
 	virtual void Tick();

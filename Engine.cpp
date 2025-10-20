@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include <conio.h>
+#include <algorithm>
 
 #include "World.h"
 #include "Wall.h"
@@ -11,6 +12,7 @@
 #include "Goal.h"
 #include "Monster.h"
 
+FEngine* FEngine::Instance = nullptr;
 
 FEngine::FEngine():
 	World(nullptr)
@@ -72,6 +74,12 @@ void FEngine::Init()
 					World->SpawnActor(NewActor);
 				}
 			}
+			// 1. std::sort(World->GetAllActors(),)
+			std::sort(World->GetAllActors().begin(), World->GetAllActors().end(),
+				[](AActor* a, AActor* b) {return a->GetZOrder() < b->GetZOrder(); });
+			// 2. 정렬 로직 자체 구현
+			// selection sort
+			// ZOrder
 			Y++;
 		}
 	}
@@ -105,6 +113,5 @@ void FEngine::Tick()
 
 void FEngine::Render()
 {
-//	system("cls");
 	GetWorld()->Render();
 }

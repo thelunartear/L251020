@@ -38,9 +38,18 @@ public:
 		Shape = Value;
 	}
 
+	__forceinline int GetZOrder() const
+	{
+		return ZOrder;
+	}
+
+	void SetZOrder(int Value)
+	{
+		ZOrder = Value;
+	}
 
 protected:
 	FVector2D Location;
 	char Shape;
+	int ZOrder;
 };
-

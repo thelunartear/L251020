@@ -9,7 +9,7 @@ UWorld::~UWorld()
 {
 }
 
-std::vector<AActor*> UWorld::GetAllActors() const
+std::vector<AActor*>& UWorld::GetAllActors()
 {
 	return Actors;
 }

@@ -2,14 +2,12 @@
 
 int main(int argc, char* argv[])
 {
-	FEngine* MyEngine = new FEngine();
 
-	MyEngine->Init();
-	MyEngine->Run();
-	MyEngine->Term();
+	GEngine->Init();
+	GEngine->Run();
+	GEngine->Term();
 
-	delete MyEngine;
-	MyEngine = nullptr;
+	delete GEngine;
 
 	return 0;
 }
