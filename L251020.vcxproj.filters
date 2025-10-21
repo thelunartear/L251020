@@ -42,6 +42,9 @@
     <ClCompile Include="Goal.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="DynamicArray.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vector.h">
@@ -69,6 +72,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Goal.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicArray.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
