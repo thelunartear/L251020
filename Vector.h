@@ -1,5 +1,4 @@
 #pragma once
-
 //Data ÀúÀå¿ë
 struct FVector2D
 {

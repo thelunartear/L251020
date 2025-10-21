@@ -14,8 +14,7 @@
 
 FEngine* FEngine::Instance = nullptr;
 
-FEngine::FEngine():
-	World(nullptr)
+FEngine::FEngine() : World(nullptr)
 {
 }
 
@@ -27,7 +26,7 @@ void FEngine::Init()
 {
 	World = new UWorld();
 
-	std::ifstream MapFile("Level01.map");
+	std::ifstream MapFile("level01.map");
 
 	if (MapFile.is_open())
 	{
@@ -41,13 +40,6 @@ void FEngine::Init()
 				if (Line[X] == '*')
 				{
 					AActor* NewActor = new AWall();
-					NewActor->SetActorLocation(FVector2D(X, Y));
-					NewActor->SetShape(Line[X]);
-					World->SpawnActor(NewActor);
-				}
-				else if (Line[X] == ' ')
-				{
-					AActor* NewActor = new AFloor();
 					NewActor->SetActorLocation(FVector2D(X, Y));
 					NewActor->SetShape(Line[X]);
 					World->SpawnActor(NewActor);
@@ -73,18 +65,21 @@ void FEngine::Init()
 					NewActor->SetShape(Line[X]);
 					World->SpawnActor(NewActor);
 				}
+
+				{
+					AActor* NewActor = new AFloor();
+					NewActor->SetActorLocation(FVector2D(X, Y));
+					NewActor->SetShape(' ');
+					World->SpawnActor(NewActor);
+				}
 			}
-			// 1. std::sort(World->GetAllActors(),)
-			std::sort(World->GetAllActors().begin(), World->GetAllActors().end(),
-				[](AActor* a, AActor* b) {return a->GetZOrder() < b->GetZOrder(); });
-			// 2. 정렬 로직 자체 구현
-			// selection sort
-			// ZOrder
 			Y++;
 		}
-	}
 
+	}
 	MapFile.close();
+
+	World->SortActor();
 }
 
 void FEngine::Run()
@@ -103,7 +98,7 @@ void FEngine::Term()
 
 void FEngine::Input()
 {
-	int KeyCode = _getch();
+	KeyCode = _getch();
 }
 
 void FEngine::Tick()

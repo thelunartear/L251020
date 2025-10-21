@@ -9,12 +9,12 @@ UWorld::~UWorld()
 {
 }
 
-std::vector<AActor*>& UWorld::GetAllActors()
+std::vector<AActor*> UWorld::GetAllActors() const
 {
 	return Actors;
 }
 
-//팩토리 패턴(생성도 이함수가 함)
+// 팩토리 패턴(생성도 이 함수가 한다)
 AActor* UWorld::SpawnActor(AActor* NewActor)
 {
 	Actors.push_back(NewActor);
@@ -39,3 +39,18 @@ void UWorld::Render()
 	}
 }
 
+void UWorld::SortActor()
+{
+	for (int j = 0; j < Actors.size(); ++j)
+	{
+		for (int i = 0; i < Actors.size(); ++i)
+		{
+			if (Actors[j]->GetZOrder() < Actors[i]->GetZOrder())
+			{
+				AActor* Temp = Actors[j];
+				Actors[j] = Actors[i];
+				Actors[i] = Temp;
+			}
+		}
+	}
+}

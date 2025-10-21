@@ -5,6 +5,7 @@ class FEngine
 {
 protected:
 	FEngine();
+
 public:
 	virtual ~FEngine();
 
@@ -30,7 +31,7 @@ protected:
 	class UWorld* World;
 
 	bool bIsRunning = true;
-
+	
 	int KeyCode = 0;
 
 public:
@@ -42,8 +43,11 @@ public:
 		}
 		return Instance;
 	}
+	
 protected:
 	static FEngine* Instance;
 };
+
+//extern FEngine* GEngine;
 
 #define GEngine		FEngine::GetInstance()

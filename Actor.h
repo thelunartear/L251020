@@ -1,8 +1,5 @@
 #pragma once
-
 #include "Vector.h"
-
-//2d 
 
 class AActor
 {
@@ -10,11 +7,11 @@ public:
 	AActor();
 	virtual ~AActor();
 
-	//virtual function table ->vftbl
-	//override
-	virtual void Tick(); //이건 자식이 재정의 할수도 있다.
+	// virtual function table
+	// override
+	// 자식이 재정의 할 수도 있음
+	virtual void Tick();
 	virtual void Render();
-
 
 	__forceinline FVector2D GetActorLocation() const
 	{
@@ -23,12 +20,11 @@ public:
 
 	void SetActorLocation(FVector2D Value)
 	{
-		//Location = Value;
 		Location.X = Value.X;
 		Location.Y = Value.Y;
 	}
 
-	__forceinline char GetShape() 
+	__forceinline char GetShape()
 	{
 		return Shape;
 	}
@@ -41,11 +37,6 @@ public:
 	__forceinline int GetZOrder() const
 	{
 		return ZOrder;
-	}
-
-	void SetZOrder(int Value)
-	{
-		ZOrder = Value;
 	}
 
 protected:

@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 
-class AActor;
+class AActor;	// 전방 선언
 
 class UWorld
 {
@@ -9,11 +9,13 @@ public:
 	UWorld();
 	virtual ~UWorld();
 
-	std::vector<AActor*>& GetAllActors(); 
+	std::vector<AActor*> GetAllActors() const;
 	AActor* SpawnActor(AActor* NewActor);
 
 	virtual void Tick();
 	virtual void Render();
+
+	void SortActor();
 
 protected:
 	std::vector<AActor*> Actors;
