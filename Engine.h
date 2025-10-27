@@ -7,6 +7,7 @@ protected:
 	FEngine();
 
 public:
+
 	virtual ~FEngine();
 
 	virtual void Init();
@@ -31,8 +32,9 @@ protected:
 	class UWorld* World;
 
 	bool bIsRunning = true;
-	
+
 	int KeyCode = 0;
+
 
 public:
 	static FEngine* GetInstance()
@@ -43,7 +45,7 @@ public:
 		}
 		return Instance;
 	}
-	
+
 protected:
 	static FEngine* Instance;
 };
@@ -51,3 +53,6 @@ protected:
 //extern FEngine* GEngine;
 
 #define GEngine		FEngine::GetInstance()
+
+
+

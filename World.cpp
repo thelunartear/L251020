@@ -9,12 +9,12 @@ UWorld::~UWorld()
 {
 }
 
-std::vector<AActor*> UWorld::GetAllActors() const
+void UWorld::GetAllActors(std::vector<AActor*>& OutActors) const
 {
-	return Actors;
+	OutActors = Actors;
 }
 
-// 팩토리 패턴(생성도 이 함수가 한다)
+//팩토리 패턴(생성도 이함수가 함)
 AActor* UWorld::SpawnActor(AActor* NewActor)
 {
 	Actors.push_back(NewActor);
@@ -27,6 +27,7 @@ void UWorld::Tick()
 	//All Actors Process.
 	for (auto Actor : Actors)
 	{
+		//runtime시에 결정됨. 문제는 이놈이 문제.
 		Actor->Tick();
 	}
 }
@@ -54,3 +55,4 @@ void UWorld::SortActor()
 		}
 	}
 }
+

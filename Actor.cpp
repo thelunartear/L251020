@@ -2,9 +2,9 @@
 #include <iostream>
 #include <Windows.h>
 
-AActor::AActor() : Shape(' '), Location(0, 0)
+AActor::AActor() :
+	Shape(' '),  Location(0, 0)
 {
-
 }
 
 AActor::~AActor()
@@ -17,10 +17,29 @@ void AActor::Tick()
 
 void AActor::Render()
 {
-	COORD Position;
-	Position.X = Location.X;
-	Position.Y = Location.Y;
+	COORD Posistion;
+	Posistion.X = Location.X;
+	Posistion.Y = Location.Y;
 
-	SetConsoleCursorPosition((HANDLE)GetStdHandle(STD_OUTPUT_HANDLE), Position);
+	SetConsoleCursorPosition((HANDLE)GetStdHandle(STD_OUTPUT_HANDLE), Posistion);
 	std::cout << Shape;
+}
+
+bool AActor::CheckCollsion(const AActor* OtherActor)
+{
+	if (this != OtherActor && OtherActor->bIsCollision && bIsCollision &&
+		this->Location == OtherActor->Location)	//충돌 처리 시 자기자신 예외
+	{
+		return true;
+	}
+
+	return false;
+}
+
+void AActor::ActorBeginOverlap()
+{
+}
+
+void AActor::Hit()
+{
 }

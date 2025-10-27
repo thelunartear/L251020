@@ -12,9 +12,12 @@
 #include "Goal.h"
 #include "Monster.h"
 
+//FEngine* GEngine = nullptr;
+
 FEngine* FEngine::Instance = nullptr;
 
-FEngine::FEngine() : World(nullptr)
+FEngine::FEngine():
+	World(nullptr)
 {
 }
 
@@ -108,5 +111,6 @@ void FEngine::Tick()
 
 void FEngine::Render()
 {
+//	system("cls");
 	GetWorld()->Render();
 }
