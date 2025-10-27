@@ -11,6 +11,7 @@
 #include "Player.h"
 #include "Goal.h"
 #include "Monster.h"
+#include "GameMode.h"
 
 //FEngine* GEngine = nullptr;
 
@@ -27,6 +28,8 @@ FEngine::~FEngine()
 
 void FEngine::Init()
 {
+	srand((unsigned int)time(nullptr));
+
 	World = new UWorld();
 
 	std::ifstream MapFile("level01.map");
@@ -83,6 +86,9 @@ void FEngine::Init()
 	MapFile.close();
 
 	World->SortActor();
+
+	// UE GameWrk SortPlayer
+	World->SpawnActor(new AGameMode());
 }
 
 void FEngine::Run()
@@ -101,7 +107,10 @@ void FEngine::Term()
 
 void FEngine::Input()
 {
-	KeyCode = _getch();
+	if (_kbhit())
+	{
+		KeyCode = _getch();
+	}
 }
 
 void FEngine::Tick()
