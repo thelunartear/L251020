@@ -1,9 +1,12 @@
 #include "GameMode.h"
+#include <vector>
 #include "Engine.h"
 #include "World.h"
 #include "Player.h"
 #include "Monster.h"
 #include "Goal.h"
+
+
 
 AGameMode::AGameMode()
 {
@@ -19,6 +22,7 @@ void AGameMode::Tick()
 {
 	AActor* Player = nullptr;
 	std::vector<AActor*> AllActors;
+	GEngine->GetWorld()->GetAllActors(AllActors);
 	for (auto Actor : AllActors)
 	{
 		if (dynamic_cast<APlayer*>(Actor))
@@ -34,8 +38,8 @@ void AGameMode::Tick()
 		{
 			if (Player->GetActorLocation() == Actor->GetActorLocation())
 			{
-				// game over
-				exit(-1);
+				//game over
+				//exit(-1);
 				break;
 			}
 		}
@@ -47,14 +51,28 @@ void AGameMode::Tick()
 		{
 			if (Player->GetActorLocation() == Actor->GetActorLocation())
 			{
-				// game clear
-				exit(-1);
+				//complete
+				//exit(-1);
 				break;
 			}
 		}
 	}
+
+
+	SDL_Log("deltaSeconds : %f", GEngine->GetWorldDeltaSeconds());
+
+	//if (Player == Monster)
+	//{
+	//	over
+	//}
+
+	//if (Player == Goal)
+	//{
+	//	complete
+	//}
 }
 
 void AGameMode::Render()
 {
+
 }
