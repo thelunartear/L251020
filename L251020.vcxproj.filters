@@ -21,10 +21,19 @@
     <ClCompile Include="Actor.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="World.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Engine.cpp">
+    <ClCompile Include="Timer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicArray.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
@@ -36,33 +45,48 @@
     <ClCompile Include="Wall.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Floor.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Goal.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="DynamicArray.cpp">
+    <ClCompile Include="Floor.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="GameMode.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Timer.cpp">
+    <ClCompile Include="Component.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorComponent.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneComponent.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="PaperFilpbookComponent.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Actor.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
     <ClInclude Include="Vector.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Actor.h">
+    <ClInclude Include="Engine.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="World.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Engine.h">
+    <ClInclude Include="Timer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicArray.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
@@ -74,25 +98,26 @@
     <ClInclude Include="Wall.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Floor.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Goal.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="DynamicArray.h">
+    <ClInclude Include="Floor.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="GameMode.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Timer.h">
+    <ClInclude Include="Component.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="L251020.rc">
-      <Filter>리소스 파일</Filter>
-    </ResourceCompile>
+    <ClInclude Include="ActorComponent.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneComponent.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="PaperFilpbookComponent.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
